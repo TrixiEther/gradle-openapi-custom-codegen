@@ -1,0 +1,33 @@
+plugins {
+	id 'org.gradle.java'
+	id 'org.gradle.maven-publish'
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.openapitools:openapi-generator:6.6.0'
+}
+
+java {
+	sourceCompatibility = '17'
+	withSourcesJar()
+}
+
+jar {
+	enabled = true
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			groupId = 'dev.trixiether'
+			artifactId = 'sample-codegen'
+			version = '0.0.1'
+			from components.java
+		}
+	}
+}
