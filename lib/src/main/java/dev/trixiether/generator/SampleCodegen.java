@@ -16,7 +16,7 @@ public class SampleCodegen extends SpringCodegen implements CodegenConfig {
   }
 
   /*
-    A HINT - rename the main() class as we need!!!
+    A HINT - rename the main invoker class and java file as we need!!!
    */
   @Override
   public void processOpts() {
